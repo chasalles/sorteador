@@ -14,7 +14,7 @@ public class QuadroNumeros extends JPanel {
 	 * Create the panel.
 	 */
 	public QuadroNumeros() {
-		setBackground(Color.LIGHT_GRAY);
+		setBackground(Color.GRAY);
 		setLayout(new GridLayout(5, 5, 5, 5));
 
 		JLabel labelNumero01 = new JLabel("01");
