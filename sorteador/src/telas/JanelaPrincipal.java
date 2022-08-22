@@ -32,7 +32,7 @@ public class JanelaPrincipal extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
-	private LinkedList<Jogo> jogo;
+	private LinkedList<Jogo> todosJogo;
 
 	/**
 	 * Launch the application.
@@ -57,7 +57,7 @@ public class JanelaPrincipal extends JFrame {
 	public JanelaPrincipal() {
 		iniciaComponentes();
 		
-		this.jogo = new LinkedList<Jogo>();
+		this.todosJogo = new LinkedList<Jogo>();
 
 		Document doc;
 		
@@ -115,6 +115,8 @@ public class JanelaPrincipal extends JFrame {
 				System.out.println(elements.get(14).html());
 				System.out.println(elements.get(15).html());
 				System.out.println(elements.get(16).html());	
+				
+				todosJogo.add(jogo);
 			}
 			
 		/*	for (Element element : content.children()) {
@@ -153,13 +155,17 @@ public class JanelaPrincipal extends JFrame {
 		JMenuItem menuItem01 = new JMenuItem("Resultado Sorteio");
 		menuItem01.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				menuItem01Action();
+				menuItem01Action(e);
 			}
 		});
 		menuArquivo.add(menuItem01);
 	}
 	
-	public void menuItem01Action() {
+	public void menuItem01Action(ActionEvent e) {
+		int sorteio = 2586;
+		
+		System.out.println(todosJogo.get(sorteio).getApostaNumeros());
+		
 		System.out.println("Entrou!!");
 	}
 

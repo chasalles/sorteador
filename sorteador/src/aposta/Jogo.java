@@ -17,4 +17,12 @@ public class Jogo {
 	public void adicionaNumero(String numero) {
 		this.apostaNumeros.add(Integer.valueOf(numero));
 	}
+
+	public LinkedList<Integer> getApostaNumeros() {
+		return apostaNumeros;
+	}
+
+	public void setApostaNumeros(LinkedList<Integer> apostaNumeros) {
+		this.apostaNumeros = apostaNumeros;
+	}
 }
