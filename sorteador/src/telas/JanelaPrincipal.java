@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
@@ -13,6 +15,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicTabbedPaneUI.TabbedPaneLayout;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -35,6 +38,8 @@ public class JanelaPrincipal extends JFrame {
 	 */
 	private QuadroNumeros panelQuadroNumeros;
 	private JPanel contentPane;
+	private JTabbedPane tabbedPane;
+	private JTextArea textArea;
 	private LinkedList<Jogo> todosJogo;
 	private LinkedList<Jogo> repetidosJogo;
 
@@ -144,18 +149,17 @@ public class JanelaPrincipal extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		
 		panelQuadroNumeros = new QuadroNumeros();
 		tabbedPane.addTab("Números", null, panelQuadroNumeros, null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
 		tabbedPane.addTab("Mais Jogados", null, panel, null);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setColumns(80);
-		textArea.setRows(20);
+		textArea = new JTextArea();
 		panel.add(textArea);
 
 		JMenuBar menuBar = new JMenuBar();
@@ -179,6 +183,14 @@ public class JanelaPrincipal extends JFrame {
 			}
 		});
 		menuArquivo.add(menuItem02);
+		
+		JMenuItem menuItem03 = new JMenuItem("Ultimos Jogos");
+		menuItem03.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				menuItem03Action(e);
+			}
+		});
+		menuArquivo.add(menuItem03);
 	}
 
 	public void menuItem01Action(ActionEvent e) {
@@ -190,7 +202,7 @@ public class JanelaPrincipal extends JFrame {
 			System.out.println(todosJogo.get(sorteio).getApostaNumeros());
 			
 			for (Integer numero : todosJogo.get(sorteio).getApostaNumeros()) {
-				colorirLabels(numero);
+				colorirLabels(numero, Color.YELLOW);
 			}
 		}else {
 			System.out.println("NÃO EXISTE!");
@@ -199,9 +211,67 @@ public class JanelaPrincipal extends JFrame {
 
 	public void menuItem02Action(ActionEvent e) {
 		for (int i = 0; i < todosJogo.size(); i++) {
-			
+			if(!temJogoIgual(todosJogo.get(i))) {
+				contagemJogos(todosJogo.get(i));
+			}
 		}
+		
+		for (Jogo jogo : repetidosJogo) {
+			System.out.println("Jogo: " + jogo.getConcurso());
+			System.out.println(jogo.getApostaNumeros());
+			
+			textArea.append("Jogo: " + jogo.getConcurso());
+			textArea.append(jogo.getApostaNumeros().toString() + "\n");
+		}
+		
+		System.out.println("Acabou!");
 	}
+	
+	public void contagemJogos(Jogo jogo) {
+		for (int i = 0; i < todosJogo.size(); i++) {
+			if(jogo.isIgual(todosJogo.get(i).getApostaNumeros())) {
+				jogo.incrementaVezes();
+			}
+		}
+		
+		if(jogo.getVezes() > 1) {
+			System.out.println("TAMMM: " + jogo.getVezes());
+			repetidosJogo.add(jogo);
+		}	
+	}
+	
+	public boolean temJogoIgual(Jogo jogo) {
+		for (int i = 0; i < repetidosJogo.size(); i++) {
+			if(jogo.isIgual(repetidosJogo.get(i).getApostaNumeros())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void menuItem03Action(ActionEvent e) {
+		int rangeJogos = Integer.valueOf(JOptionPane.showInputDialog("Últimos concursos"));
+		
+		int[] vetorCor = new int[25];
+		Arrays.fill(vetorCor, 0);
+		
+		for (int i = todosJogo.size() - 1; i >= todosJogo.size() - rangeJogos; i--) {
+			for (int j = 0; j < todosJogo.get(i).getApostaNumeros().size(); j++) {
+				vetorCor[todosJogo.get(i).getApostaNumeros().get(j) - 1]++;
+			}
+		}
+		
+		descolorirLabels();
+		
+		int verde = 255 / rangeJogos;
+		
+		for (int i = 0; i < 25; i++) {
+			colorirLabels(i + 1, new Color(0, vetorCor[i] * verde, 0));
+		}
+		
+	}
+
+	
 	
 	public void descolorirLabels() {
 		panelQuadroNumeros.getLabelNumero01().setBackground(Color.WHITE);
@@ -231,82 +301,82 @@ public class JanelaPrincipal extends JFrame {
 		panelQuadroNumeros.getLabelNumero25().setBackground(Color.WHITE);
 	}
 
-	public void colorirLabels(int n) {
+	public void colorirLabels(int n, Color color) {
 		switch (n) {
 		case 1:
-			panelQuadroNumeros.getLabelNumero01().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero01().setBackground(color);
 			break;
 		case 2:
-			panelQuadroNumeros.getLabelNumero02().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero02().setBackground(color);
 			break;
 		case 3:
-			panelQuadroNumeros.getLabelNumero03().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero03().setBackground(color);
 			break;
 		case 4:
-			panelQuadroNumeros.getLabelNumero04().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero04().setBackground(color);
 			break;
 		case 5:
-			panelQuadroNumeros.getLabelNumero05().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero05().setBackground(color);
 			break;
 		case 6:
-			panelQuadroNumeros.getLabelNumero06().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero06().setBackground(color);
 			break;
 		case 7:
-			panelQuadroNumeros.getLabelNumero07().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero07().setBackground(color);
 			break;
 		case 8:
-			panelQuadroNumeros.getLabelNumero08().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero08().setBackground(color);
 			break;
 		case 9:
-			panelQuadroNumeros.getLabelNumero09().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero09().setBackground(color);
 			break;
 		case 10:
-			panelQuadroNumeros.getLabelNumero10().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero10().setBackground(color);
 			break;
 		case 11:
-			panelQuadroNumeros.getLabelNumero11().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero11().setBackground(color);
 			break;
 		case 12:
-			panelQuadroNumeros.getLabelNumero12().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero12().setBackground(color);
 			break;
 		case 13:
-			panelQuadroNumeros.getLabelNumero13().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero13().setBackground(color);
 			break;
 		case 14:
-			panelQuadroNumeros.getLabelNumero14().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero14().setBackground(color);
 			break;
 		case 15:
-			panelQuadroNumeros.getLabelNumero15().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero15().setBackground(color);
 			break;
 		case 16:
-			panelQuadroNumeros.getLabelNumero16().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero16().setBackground(color);
 			break;
 		case 17:
-			panelQuadroNumeros.getLabelNumero17().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero17().setBackground(color);
 			break;
 		case 18:
-			panelQuadroNumeros.getLabelNumero18().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero18().setBackground(color);
 			break;
 		case 19:
-			panelQuadroNumeros.getLabelNumero19().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero19().setBackground(color);
 			break;
 		case 20:
-			panelQuadroNumeros.getLabelNumero20().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero20().setBackground(color);
 			break;
 		case 21:
-			panelQuadroNumeros.getLabelNumero21().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero21().setBackground(color);
 			break;
 		case 22:
-			panelQuadroNumeros.getLabelNumero22().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero22().setBackground(color);
 			break;
 		case 23:
-			panelQuadroNumeros.getLabelNumero23().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero23().setBackground(color);
 			break;
 		case 24:
-			panelQuadroNumeros.getLabelNumero24().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero24().setBackground(color);
 			break;
 		case 25:
-			panelQuadroNumeros.getLabelNumero25().setBackground(new Color(255, 200, 0));
+			panelQuadroNumeros.getLabelNumero25().setBackground(color);
 			break;
 		default:
 			break;

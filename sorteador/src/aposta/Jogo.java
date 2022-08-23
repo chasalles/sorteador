@@ -1,18 +1,19 @@
 package aposta;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Jogo {
 	private Integer concurso;
 	private String data;
 	private LinkedList<Integer> apostaNumeros;
+	private int vezes;
 
 	public Jogo(String concurso, String data) {
 		super();
 		this.concurso = Integer.valueOf(concurso);
 		this.data = data;
 		this.apostaNumeros = new LinkedList<Integer>();
+		this.vezes = 0;
 	}
 
 	public void adicionaNumero(String numero) {
@@ -43,6 +44,18 @@ public class Jogo {
 		this.apostaNumeros = apostaNumeros;
 	}
 	
+	public int getVezes() {
+		return vezes;
+	}
+
+	public void setVezes(int vezes) {
+		this.vezes = vezes;
+	}
+	
+	public void incrementaVezes() {
+		this.vezes++;
+	}
+
 	public boolean isIgual(LinkedList<Integer> apostaNumeros) {
 		for (int i = 0; i < this.apostaNumeros.size(); i++) {
 			if(this.apostaNumeros.get(i) != apostaNumeros.get(i)) {
