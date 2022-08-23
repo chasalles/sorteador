@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class QuadroNumeros extends JPanel {
 
@@ -35,7 +37,7 @@ public class QuadroNumeros extends JPanel {
 	private JLabel labelNumero23;
 	private JLabel labelNumero24;
 	private JLabel labelNumero25;
-	
+
 	/**
 	 * Create the panel.
 	 */
@@ -44,6 +46,13 @@ public class QuadroNumeros extends JPanel {
 		setLayout(new GridLayout(5, 5, 5, 5));
 
 		labelNumero01 = new JLabel("01");
+		labelNumero01.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero01);
+			}
+		});
+
 		labelNumero01.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero01.setBackground(Color.WHITE);
 		labelNumero01.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -51,6 +60,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero01);
 
 		labelNumero02 = new JLabel("02");
+		labelNumero02.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero02);
+			}
+		});
 		labelNumero02.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero02.setBackground(Color.WHITE);
 		labelNumero02.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -58,6 +73,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero02);
 
 		labelNumero03 = new JLabel("03");
+		labelNumero03.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero03);
+			}
+		});
 		labelNumero03.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero03.setBackground(Color.WHITE);
 		labelNumero03.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -65,6 +86,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero03);
 
 		labelNumero04 = new JLabel("04");
+		labelNumero04.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero04);
+			}
+		});
 		labelNumero04.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero04.setBackground(Color.WHITE);
 		labelNumero04.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -72,6 +99,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero04);
 
 		labelNumero05 = new JLabel("05");
+		labelNumero05.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero05);
+			}
+		});
 		labelNumero05.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero05.setBackground(Color.WHITE);
 		labelNumero05.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -79,6 +112,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero05);
 
 		labelNumero06 = new JLabel("06");
+		labelNumero06.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero06);
+			}
+		});
 		labelNumero06.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero06.setBackground(Color.WHITE);
 		labelNumero06.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -86,6 +125,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero06);
 
 		labelNumero07 = new JLabel("07");
+		labelNumero07.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero07);
+			}
+		});
 		labelNumero07.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero07.setBackground(Color.WHITE);
 		labelNumero07.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -93,6 +138,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero07);
 
 		labelNumero08 = new JLabel("08");
+		labelNumero08.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero08);
+			}
+		});
 		labelNumero08.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero08.setBackground(Color.WHITE);
 		labelNumero08.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -100,6 +151,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero08);
 
 		labelNumero09 = new JLabel("09");
+		labelNumero09.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero09);
+			}
+		});
 		labelNumero09.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero09.setBackground(Color.WHITE);
 		labelNumero09.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -107,6 +164,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero09);
 
 		labelNumero10 = new JLabel("10");
+		labelNumero10.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero10);
+			}
+		});
 		labelNumero10.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero10.setBackground(Color.WHITE);
 		labelNumero10.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -114,6 +177,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero10);
 
 		labelNumero11 = new JLabel("11");
+		labelNumero11.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero11);
+			}
+		});
 		labelNumero11.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero11.setBackground(Color.WHITE);
 		labelNumero11.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -121,6 +190,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero11);
 
 		labelNumero12 = new JLabel("12");
+		labelNumero12.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero12);
+			}
+		});
 		labelNumero12.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero12.setBackground(Color.WHITE);
 		labelNumero12.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -128,6 +203,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero12);
 
 		labelNumero13 = new JLabel("13");
+		labelNumero13.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero13);
+			}
+		});
 		labelNumero13.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero13.setBackground(Color.WHITE);
 		labelNumero13.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -135,6 +216,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero13);
 
 		labelNumero14 = new JLabel("14");
+		labelNumero14.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero14);
+			}
+		});
 		labelNumero14.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero14.setBackground(Color.WHITE);
 		labelNumero14.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -142,6 +229,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero14);
 
 		labelNumero15 = new JLabel("15");
+		labelNumero15.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero15);
+			}
+		});
 		labelNumero15.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero15.setBackground(Color.WHITE);
 		labelNumero15.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -149,6 +242,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero15);
 
 		labelNumero16 = new JLabel("16");
+		labelNumero16.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero16);
+			}
+		});
 		labelNumero16.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero16.setBackground(Color.WHITE);
 		labelNumero16.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -156,6 +255,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero16);
 
 		labelNumero17 = new JLabel("17");
+		labelNumero17.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero17);
+			}
+		});
 		labelNumero17.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero17.setBackground(Color.WHITE);
 		labelNumero17.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -163,6 +268,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero17);
 
 		labelNumero18 = new JLabel("18");
+		labelNumero18.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero18);
+			}
+		});
 		labelNumero18.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero18.setBackground(Color.WHITE);
 		labelNumero18.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -170,6 +281,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero18);
 
 		labelNumero19 = new JLabel("19");
+		labelNumero19.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero19);
+			}
+		});
 		labelNumero19.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero19.setBackground(Color.WHITE);
 		labelNumero19.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -177,6 +294,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero19);
 
 		labelNumero20 = new JLabel("20");
+		labelNumero20.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero20);
+			}
+		});
 		labelNumero20.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero20.setBackground(Color.WHITE);
 		labelNumero20.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -184,6 +307,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero20);
 
 		labelNumero21 = new JLabel("21");
+		labelNumero21.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero21);
+			}
+		});
 		labelNumero21.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero21.setBackground(Color.WHITE);
 		labelNumero21.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -191,6 +320,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero21);
 
 		labelNumero22 = new JLabel("22");
+		labelNumero22.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero22);
+			}
+		});
 		labelNumero22.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero22.setBackground(Color.WHITE);
 		labelNumero22.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -198,6 +333,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero22);
 
 		labelNumero23 = new JLabel("23");
+		labelNumero23.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero23);
+			}
+		});
 		labelNumero23.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero23.setBackground(Color.WHITE);
 		labelNumero23.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -205,6 +346,12 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero23);
 
 		labelNumero24 = new JLabel("24");
+		labelNumero24.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero24);
+			}
+		});
 		labelNumero24.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero24.setBackground(Color.WHITE);
 		labelNumero24.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -212,12 +359,137 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero24);
 
 		labelNumero25 = new JLabel("25");
+		labelNumero25.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				trocarCorDeFundo(labelNumero25);
+			}
+		});
 		labelNumero25.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumero25.setBackground(Color.WHITE);
 		labelNumero25.setFont(new Font("Arial", Font.PLAIN, 30));
 		labelNumero25.setOpaque(true);
 		add(labelNumero25);
 	}
+
+	public void trocarCorDeFundo(JLabel jLabel) {
+		if (jLabel.getBackground() == Color.CYAN) {
+			jLabel.setBackground(Color.WHITE);
+		} else {
+			jLabel.setBackground(Color.CYAN);
+		}
+	}
+	
+	public void colorirLabels(Color color) {
+		labelNumero01.setBackground(color);
+		labelNumero02.setBackground(color);
+		labelNumero03.setBackground(color);
+		labelNumero04.setBackground(color);
+		labelNumero05.setBackground(color);
+		labelNumero06.setBackground(color);
+		labelNumero07.setBackground(color);
+		labelNumero08.setBackground(color);
+		labelNumero09.setBackground(color);
+		labelNumero10.setBackground(color);
+		labelNumero11.setBackground(color);
+		labelNumero12.setBackground(color);
+		labelNumero13.setBackground(color);
+		labelNumero14.setBackground(color);
+		labelNumero15.setBackground(color);
+		labelNumero16.setBackground(color);
+		labelNumero17.setBackground(color);
+		labelNumero18.setBackground(color);
+		labelNumero19.setBackground(color);
+		labelNumero20.setBackground(color);
+		labelNumero21.setBackground(color);
+		labelNumero22.setBackground(color);
+		labelNumero23.setBackground(color);
+		labelNumero24.setBackground(color);
+		labelNumero25.setBackground(color);
+	}
+	
+	public void colorirLabelsIndividual(int n, Color color) {
+		switch (n) {
+		case 1:
+			labelNumero01.setBackground(color);
+			break;
+		case 2:
+			labelNumero02.setBackground(color);
+			break;
+		case 3:
+			labelNumero03.setBackground(color);
+			break;
+		case 4:
+			labelNumero04.setBackground(color);
+			break;
+		case 5:
+			labelNumero05.setBackground(color);
+			break;
+		case 6:
+			labelNumero06.setBackground(color);
+			break;
+		case 7:
+			labelNumero07.setBackground(color);
+			break;
+		case 8:
+			labelNumero08.setBackground(color);
+			break;
+		case 9:
+			labelNumero09.setBackground(color);
+			break;
+		case 10:
+			labelNumero10.setBackground(color);
+			break;
+		case 11:
+			labelNumero11.setBackground(color);
+			break;
+		case 12:
+			labelNumero12.setBackground(color);
+			break;
+		case 13:
+			labelNumero13.setBackground(color);
+			break;
+		case 14:
+			labelNumero14.setBackground(color);
+			break;
+		case 15:
+			labelNumero15.setBackground(color);
+			break;
+		case 16:
+			labelNumero16.setBackground(color);
+			break;
+		case 17:
+			labelNumero17.setBackground(color);
+			break;
+		case 18:
+			labelNumero18.setBackground(color);
+			break;
+		case 19:
+			labelNumero19.setBackground(color);
+			break;
+		case 20:
+			labelNumero20.setBackground(color);
+			break;
+		case 21:
+			labelNumero21.setBackground(color);
+			break;
+		case 22:
+			labelNumero22.setBackground(color);
+			break;
+		case 23:
+			labelNumero23.setBackground(color);
+			break;
+		case 24:
+			labelNumero24.setBackground(color);
+			break;
+		case 25:
+			labelNumero25.setBackground(color);
+			break;
+		default:
+			break;
+		}
+	}
+
 
 	public JLabel getLabelNumero01() {
 		return labelNumero01;
