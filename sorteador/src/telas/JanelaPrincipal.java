@@ -5,8 +5,6 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -30,6 +28,7 @@ import org.jsoup.select.Elements;
 
 import aposta.Jogo;
 
+@SuppressWarnings("serial")
 public class JanelaPrincipal extends JFrame {
 
 	/**
@@ -41,6 +40,7 @@ public class JanelaPrincipal extends JFrame {
 	private JTextArea textArea;
 	private LinkedList<Jogo> todosJogo;
 	private LinkedList<Jogo> repetidosJogo;
+	private Document doc;
 
 	/**
 	 * Launch the application.
@@ -67,8 +67,6 @@ public class JanelaPrincipal extends JFrame {
 
 		this.todosJogo = new LinkedList<Jogo>();
 		this.repetidosJogo = new LinkedList<Jogo>();
-
-		Document doc;
 
 		try {
 			File input = new File("caixa.html");

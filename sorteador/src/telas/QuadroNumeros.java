@@ -7,9 +7,13 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+
+import aposta.Jogo;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+@SuppressWarnings("serial")
 public class QuadroNumeros extends JPanel {
 
 	private JLabel labelNumero01;
@@ -37,6 +41,7 @@ public class QuadroNumeros extends JPanel {
 	private JLabel labelNumero23;
 	private JLabel labelNumero24;
 	private JLabel labelNumero25;
+	private Jogo jogo;
 
 	/**
 	 * Create the panel.
@@ -44,12 +49,15 @@ public class QuadroNumeros extends JPanel {
 	public QuadroNumeros() {
 		setBackground(Color.GRAY);
 		setLayout(new GridLayout(5, 5, 5, 5));
+		
+		jogo = new Jogo("5000", "9/9/9999");
 
 		labelNumero01 = new JLabel("01");
 		labelNumero01.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero01);
+				Integer n = 1;
+				trocarCorDeFundo(labelNumero01, n);
 			}
 		});
 
@@ -63,7 +71,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero02.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero02);
+				Integer n = 2;
+				trocarCorDeFundo(labelNumero02, n);
 			}
 		});
 		labelNumero02.setHorizontalAlignment(SwingConstants.CENTER);
@@ -76,7 +85,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero03.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero03);
+				Integer n = 3;
+				trocarCorDeFundo(labelNumero03, n);
 			}
 		});
 		labelNumero03.setHorizontalAlignment(SwingConstants.CENTER);
@@ -89,7 +99,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero04.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero04);
+				Integer n = 4;
+				trocarCorDeFundo(labelNumero04, n);
 			}
 		});
 		labelNumero04.setHorizontalAlignment(SwingConstants.CENTER);
@@ -102,7 +113,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero05.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero05);
+				Integer n = 5;
+				trocarCorDeFundo(labelNumero05, n);
 			}
 		});
 		labelNumero05.setHorizontalAlignment(SwingConstants.CENTER);
@@ -115,7 +127,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero06.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero06);
+				Integer n = 6;
+				trocarCorDeFundo(labelNumero06, n);
 			}
 		});
 		labelNumero06.setHorizontalAlignment(SwingConstants.CENTER);
@@ -128,7 +141,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero07.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero07);
+				Integer n = 7;
+				trocarCorDeFundo(labelNumero07, n);
 			}
 		});
 		labelNumero07.setHorizontalAlignment(SwingConstants.CENTER);
@@ -141,7 +155,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero08.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero08);
+				Integer n = 8;
+				trocarCorDeFundo(labelNumero08, n);
 			}
 		});
 		labelNumero08.setHorizontalAlignment(SwingConstants.CENTER);
@@ -154,7 +169,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero09.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero09);
+				Integer n = 9;
+				trocarCorDeFundo(labelNumero09, n);
 			}
 		});
 		labelNumero09.setHorizontalAlignment(SwingConstants.CENTER);
@@ -167,7 +183,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero10);
+				Integer n = 10;
+				trocarCorDeFundo(labelNumero10, n);
 			}
 		});
 		labelNumero10.setHorizontalAlignment(SwingConstants.CENTER);
@@ -180,7 +197,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero11);
+				Integer n = 11;
+				trocarCorDeFundo(labelNumero11, n);
 			}
 		});
 		labelNumero11.setHorizontalAlignment(SwingConstants.CENTER);
@@ -193,7 +211,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero12);
+				Integer n = 12;
+				trocarCorDeFundo(labelNumero12, n);
 			}
 		});
 		labelNumero12.setHorizontalAlignment(SwingConstants.CENTER);
@@ -206,7 +225,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero13.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero13);
+				Integer n = 13;
+				trocarCorDeFundo(labelNumero13, n);
 			}
 		});
 		labelNumero13.setHorizontalAlignment(SwingConstants.CENTER);
@@ -219,7 +239,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero14.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero14);
+				Integer n = 14;
+				trocarCorDeFundo(labelNumero14, n);
 			}
 		});
 		labelNumero14.setHorizontalAlignment(SwingConstants.CENTER);
@@ -232,7 +253,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero15.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero15);
+				Integer n = 15;
+				trocarCorDeFundo(labelNumero15, n);
 			}
 		});
 		labelNumero15.setHorizontalAlignment(SwingConstants.CENTER);
@@ -245,7 +267,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero16.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero16);
+				Integer n = 16;
+				trocarCorDeFundo(labelNumero16, n);
 			}
 		});
 		labelNumero16.setHorizontalAlignment(SwingConstants.CENTER);
@@ -258,7 +281,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero17.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero17);
+				Integer n = 17;
+				trocarCorDeFundo(labelNumero17, n);
 			}
 		});
 		labelNumero17.setHorizontalAlignment(SwingConstants.CENTER);
@@ -271,7 +295,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero18.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero18);
+				Integer n = 18;
+				trocarCorDeFundo(labelNumero18, n);
 			}
 		});
 		labelNumero18.setHorizontalAlignment(SwingConstants.CENTER);
@@ -284,7 +309,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero19.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero19);
+				Integer n = 19;
+				trocarCorDeFundo(labelNumero19, n);
 			}
 		});
 		labelNumero19.setHorizontalAlignment(SwingConstants.CENTER);
@@ -297,7 +323,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero20.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero20);
+				Integer n = 20;
+				trocarCorDeFundo(labelNumero20, n);
 			}
 		});
 		labelNumero20.setHorizontalAlignment(SwingConstants.CENTER);
@@ -310,7 +337,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero21.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero21);
+				Integer n = 21;
+				trocarCorDeFundo(labelNumero21, n);
 			}
 		});
 		labelNumero21.setHorizontalAlignment(SwingConstants.CENTER);
@@ -323,7 +351,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero22.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero22);
+				Integer n = 22;
+				trocarCorDeFundo(labelNumero22, n);
 			}
 		});
 		labelNumero22.setHorizontalAlignment(SwingConstants.CENTER);
@@ -336,7 +365,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero23.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero23);
+				Integer n = 23;
+				trocarCorDeFundo(labelNumero23, n);
 			}
 		});
 		labelNumero23.setHorizontalAlignment(SwingConstants.CENTER);
@@ -349,7 +379,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero24.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero24);
+				Integer n = 24;
+				trocarCorDeFundo(labelNumero24, n);
 			}
 		});
 		labelNumero24.setHorizontalAlignment(SwingConstants.CENTER);
@@ -362,7 +393,8 @@ public class QuadroNumeros extends JPanel {
 		labelNumero25.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				trocarCorDeFundo(labelNumero25);
+				Integer n = 25;
+				trocarCorDeFundo(labelNumero25, n);
 			}
 		});
 		labelNumero25.setHorizontalAlignment(SwingConstants.CENTER);
@@ -372,12 +404,16 @@ public class QuadroNumeros extends JPanel {
 		add(labelNumero25);
 	}
 
-	public void trocarCorDeFundo(JLabel jLabel) {
+	public void trocarCorDeFundo(JLabel jLabel, Integer n) {
 		if (jLabel.getBackground() == Color.CYAN) {
 			jLabel.setBackground(Color.WHITE);
+			jogo.getApostaNumeros().remove(n);
 		} else {
 			jLabel.setBackground(Color.CYAN);
+			jogo.getApostaNumeros().add(n);
 		}
+		
+		System.out.println(jogo.getApostaNumeros());
 	}
 	
 	public void colorirLabels(Color color) {
