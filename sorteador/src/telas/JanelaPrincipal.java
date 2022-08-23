@@ -36,6 +36,7 @@ public class JanelaPrincipal extends JFrame {
 	private QuadroNumeros panelQuadroNumeros;
 	private JPanel contentPane;
 	private LinkedList<Jogo> todosJogo;
+	private LinkedList<Jogo> repetidosJogo;
 
 	/**
 	 * Launch the application.
@@ -61,6 +62,7 @@ public class JanelaPrincipal extends JFrame {
 		iniciaComponentes();
 
 		this.todosJogo = new LinkedList<Jogo>();
+		this.repetidosJogo = new LinkedList<Jogo>();
 
 		Document doc;
 
@@ -196,7 +198,9 @@ public class JanelaPrincipal extends JFrame {
 	}
 
 	public void menuItem02Action(ActionEvent e) {
-		System.out.println("SUsusus");
+		for (int i = 0; i < todosJogo.size(); i++) {
+			
+		}
 	}
 	
 	public void descolorirLabels() {
