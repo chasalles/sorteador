@@ -27,6 +27,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import aposta.Jogo;
+import javax.swing.JScrollPane;
 
 @SuppressWarnings("serial")
 public class JanelaPrincipal extends JFrame {
@@ -159,7 +160,13 @@ public class JanelaPrincipal extends JFrame {
 		tabbedPane.addTab("Mais Jogados", null, panel, null);
 		
 		textArea = new JTextArea();
-		panel.add(textArea);
+		textArea.setRows(12);
+		textArea.setColumns(20);
+//		textArea.add(scrollPane);
+//		panel.add();
+		
+		JScrollPane scrollPane = new JScrollPane(textArea);
+		panel.add(scrollPane);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -206,6 +213,14 @@ public class JanelaPrincipal extends JFrame {
 			}
 		});
 		menuArquivo.add(menuItem04);
+		
+		JMenuItem menuItem05 = new JMenuItem("Apagar Quadro");
+		menuItem05.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText("");
+			}
+		});
+		menuArquivo.add(menuItem05);
 	}
 
 	public void menuItem01Action(ActionEvent e) {
@@ -278,11 +293,20 @@ public class JanelaPrincipal extends JFrame {
 		
 		panelQuadroNumeros.colorirLabels(Color.WHITE);
 		
-		int verde = 255 / rangeJogos;
+		int maior = vetorCor[0];
+		
+		for (int i = 1; i < vetorCor.length; i++) {
+			if(vetorCor[i] > maior) {
+				maior = vetorCor[i];
+			}
+		}
+		
+		int verde = 255 / maior;
 		
 		for (int i = 0; i < 25; i++) {
 			Color color = new Color(0, vetorCor[i] * verde, 0);
 			panelQuadroNumeros.colorirLabelsIndividual(i + 1, color);
+			textArea.append("Número " + (i + 1) + ": " + vetorCor[i] + "\n");
 		}
 		
 	}
