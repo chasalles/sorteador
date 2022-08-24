@@ -726,4 +726,12 @@ public class QuadroNumeros extends JPanel {
 	public void setLabelNumero25(JLabel labelNumero25) {
 		this.labelNumero25 = labelNumero25;
 	}
+
+	public Jogo getJogo() {
+		return jogo;
+	}
+
+	public void setJogo(Jogo jogo) {
+		this.jogo = jogo;
+	}
 }

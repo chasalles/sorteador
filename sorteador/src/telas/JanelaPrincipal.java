@@ -190,6 +190,22 @@ public class JanelaPrincipal extends JFrame {
 			}
 		});
 		menuArquivo.add(menuItem03);
+		
+		JMenuItem menuItem04 = new JMenuItem("Verifica");
+		menuItem04.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int contador = 0;
+				for (int i = 0; i < todosJogo.size(); i++) {
+					if(panelQuadroNumeros.getJogo().isIgual(todosJogo.get(i).getApostaNumeros())) {
+						contador++;
+					}
+				}
+				
+				textArea.append("números de jogos iguais: " + contador);
+				
+			}
+		});
+		menuArquivo.add(menuItem04);
 	}
 
 	public void menuItem01Action(ActionEvent e) {
